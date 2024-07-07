@@ -9,7 +9,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libblas-dev \
     liblapack-dev \
     gfortran \
+    libomp-dev \
     && rm -rf /var/lib/apt/lists/*
+
+ENV USE_OPENMP=1
 
 # Set the working directory in the container
 WORKDIR /app
